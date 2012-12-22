@@ -30,7 +30,7 @@ void setup(void)
   //clear/init the DMD pixels held in RAM
   dmd.clearScreen( true );   //true is normal (all pixels off), false is negative (all pixels on)
 
-//  stripeChaser();
+  stripeChaser();
 }
 
 void loop(void)
@@ -45,7 +45,6 @@ void message(void) {
   dmd.selectFont(Arial_Black_16);
 
   dmd.drawMarquee("Gold Coast TechSpace",20,63,0);
-//  dmd.drawMarquee("Happy Birthday Laura!!! :-)",28,63,0);
 
   long start=millis();
   long timer=start;
@@ -90,17 +89,6 @@ void stats(void) {
     dmd.drawBox(55, 0, 57, 2, GRAPHICS_NORMAL );
   }
 }
-
-void statsBig(void) {
-  dmd.clearScreen( true );
-  dmd.selectFont(Arial_Black_16);
-  dmd.drawString(0,0, "Temp:", 5, GRAPHICS_NORMAL );
-  delay(2000);
-  dmd.clearScreen( true );
-  dmd.drawString(0,0, "Humid:", 6, GRAPHICS_NORMAL );
-  delay(2000);
-}
-
 
 void stripeChaser(void) {
   byte b;
